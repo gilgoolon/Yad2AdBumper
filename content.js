@@ -26,7 +26,10 @@ waitForElm('[data-testid="bump-ad-action-button"]')
         if (targetDivs.length > 0) {
             targetDivs.forEach((div, index) => {
                 console.log(`Clicking bump button ${index + 1}`);
-                div.click();
+                const button = div.querySelector("button");
+                if (button) {
+                    button.click();
+                }
             });
             console.log(`Clicked ${targetDivs.length} bump button(s).`);
 
